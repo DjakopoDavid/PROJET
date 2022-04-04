@@ -5,11 +5,14 @@
     <meta charset="UTF-8" />
 </head>
 <body>
+
+{#<img src="public\image\header.jpg" alt="">#}
 <div id="menu">
     {% include 'menu.html.twig' %}
 </div>
 <div id="vue">
-    <h1>{% block titre_principal %}bonbon{% endblock %}</h1>
+
+    <h1>{% block titre_principal %}Bienvenue{% endblock %}</h1>
     {% block vue %}{% endblock %}
 </div>
 
