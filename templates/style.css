@@ -1,19 +1,21 @@
 ul{
     list-style-type: none;
     margin: 8px;
-    padding: 5px;
+    padding: 12px;
     overflow: hidden;
-    background-color: #f1f2f3;
+    background-color: #AAAAAA;
 }
 li{
     float: left;
 }
 li a{
     display: inline;
-    color: white;
+    color: blue;
     text-align: center;
     text-decoration: none;
+    padding: 10px;
 }
 li a:hover{
-    background-color: #111;
+    background-color: black;
 }
+

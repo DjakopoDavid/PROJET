@@ -3,16 +3,19 @@
 <head>
     <title>{% block title %}Sandbox{% endblock %}</title>
     <meta charset="UTF-8" />
-</head>
-<body>
+    <link href="style.css" rel="stylesheet">
 
-{#<img src="public\image\header.jpg" alt="">#}
+</head>
+<body class="body">
+<div>
+    <img src="" alt="">
+</div>
 <div id="menu">
     {% include 'menu.html.twig' %}
 </div>
 <div id="vue">
 
-    <h1>{% block titre_principal %}Bienvenue{% endblock %}</h1>
+    <h1>{% block titre_principal %}Bienvenue Visiteur{% endblock %}</h1>
     {% block vue %}{% endblock %}
 </div>
 
