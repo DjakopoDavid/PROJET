@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Form\RegistrationFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -34,6 +35,7 @@ class RegistrationController extends AbstractController
 
             return $this->redirectToRoute('home');
         }
+        $form->add('submit', SubmitType::class, ['label' => 'S\'inscrire']);
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
