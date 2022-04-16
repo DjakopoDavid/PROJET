@@ -25,28 +25,33 @@
 {#    <link rel="stylesheet" href="css/style.css">#}
 </head>
 <body>
-<h2>
 <nav class="">
     <div class="container">
         <div id="navbar">
             <ul id="navbar">
                 <li class="">
-                    <a href="">Acceuil</a>
+                    <a href="{{ path('home') }}">Acceuil</a>
                 </li>
                 <li class="">
-                    <a href="">Produits</a>
+                    <a href="{{ path('register') }}">Produits</a>
                 </li>
                 <li class="">
-                    <a href="">Nous contacter</a>
+                    <a href="{{ path('register') }}">Nous contacter</a>
                 </li>
                 <li class="">
-                    <a href="">Panier</a>
+                    <a href="{{ path('register') }}">Panier</a>
+                </li>
+
+                <li class="">
+                    {% if app.user %}
+                        <a href="{{ path('logout') }}">Se déconnecter</a>
+                    {% else %}
+                        <a href="{{ path('register') }}">Se connecter</a>
+                    {% endif %}
                 </li>
             </ul>
         </div>
     </div>
-
 </nav>
-</h2>
 </body>
 </html>

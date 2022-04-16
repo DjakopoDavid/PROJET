@@ -8,14 +8,19 @@
 </head>
 <body class="body">
 <div>
-    <img src="" alt="">
+    <img srcset="{{ asset('img/header.jpg') }}">
 </div>
 <div id="menu">
     {% include 'menu.html.twig' %}
 </div>
 <div id="vue">
-
-    <h1>{% block titre_principal %}Bienvenue Visiteur{% endblock %}</h1>
+    <h1>{% block titre_principal %}
+            {% if app.user %}
+                Bienvenue {{ app.user.nom }}
+            {% else %}
+                Bienvenue Visiteur
+            {% endif %}
+            {% endblock %}</h1>
     {% block vue %}{% endblock %}
 </div>
 
@@ -24,3 +29,4 @@
 </div>
 </body>
 </html>
+
