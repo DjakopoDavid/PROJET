@@ -16,6 +16,7 @@ class HomeController extends AbstractController
         ]);
     }
 
+
     public function menuAction(): Response
     {
         $args = array(

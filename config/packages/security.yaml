@@ -22,7 +22,7 @@ security:
             provider: app_user_provider
             custom_authenticator: App\Security\LoginAuthentificatorAuthenticator
             logout:
-                path: app_logout
+                path: logout
                 # where to redirect after logout
                 # target: app_any_route
 
@@ -35,11 +35,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-         - { path: ^/home, roles: ROLE_USER }
+        # - { path: ^/home, roles: ROLE_USER }
         # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
-    security:
+    login:
         password_hashers:
             # By default, password hashers are resource intensive and take time. This is
             # important to generate secure password hashes. In tests however, secure hashes
