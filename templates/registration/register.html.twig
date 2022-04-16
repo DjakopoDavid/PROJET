@@ -4,13 +4,8 @@
 
 {% block vue %}
     <h1>S'insrire</h1>
-
     {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.prenom) }}
-    {{ form_row(registrationForm.plainPassword, {
-        label: 'Password'
-    }) }}
-    <button type="submit" class="btn">Register</button>
+    <button type="submit" class="btn">S'inscrire</button>
     {{ form_end(registrationForm) }}
 
 {% endblock %}
