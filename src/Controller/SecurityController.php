@@ -36,7 +36,8 @@ class SecurityController extends AbstractController
            ->setPrenom('Jean')
            ->setRoles(['ROLE_SUPER_ADMINISTRATEUR']);
        $hashedPassword = $passwordHasher->hashPassword($user, 'nimdas');
-       $user->setPassword($hashedPassword);
+       $user->setPassword($hashedPassword)
+            ->setDateNaissance('2000-02-14');
        $em->persist($user);
        $em->flush();
        dump($user);
