@@ -36,12 +36,14 @@ class SecurityController extends AbstractController
            ->setPrenom('Jean')
            ->setRoles(['ROLE_SUPER_ADMINISTRATEUR']);
        $hashedPassword = $passwordHasher->hashPassword($user, 'nimdas');
-       $user->setPassword($hashedPassword)
-            ->setDateNaissance('2000-02-14');
+       $user->setPassword($hashedPassword);
+            #->setDateNaissance('2000-02-14');
        $em->persist($user);
        $em->flush();
        dump($user);
        return $this->redirectToRoute('register', ['id' => $user->getId()]);
+
+
 
    }
 
