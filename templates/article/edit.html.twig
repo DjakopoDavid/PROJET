@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un produit{% endblock %}
+
+{% block vue %}
+    <div class="Container">
+        <h3>Editer un produit</h3>
+        {{ form_start(form) }}
+        {{ include('article/form.html.twig') }}
+        <button class="btn btn-primary">Editer</button>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

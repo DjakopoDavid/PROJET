@@ -28,6 +28,6 @@ class LoginController extends AbstractController
     #[Route(path: '/logout', name: 'logout')]
     public function logout(): Response
     {
-        return $this->redirectToRoute('login');
+        return $this->redirectToRoute('home');
     }
 }

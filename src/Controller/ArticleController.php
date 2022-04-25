@@ -43,4 +43,32 @@ class ArticleController extends AbstractController
             "form" => $form->createView(),
         ]);
     }
+
+    #[Route('{id}/article/show', name: 'show')]
+    public function show(Article $article): Response
+    {
+        return $this->render('article/show.html.twig', [
+            "article" => $article
+            ]
+        );
+    }
+
+    #[Route('{id}/article/edit', name: 'edit')]
+    public function edit(Article $article, Request $request)
+    {
+        $form = $this->createForm(ArticleFormType::class, $article);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($article);
+            $em->flush();
+
+            return $this->redirectToRoute('list');
+        }
+        return $this->render('article/edit.html.twig', [
+                "form" => $form->createView()
+            ]
+        );
+    }
 }

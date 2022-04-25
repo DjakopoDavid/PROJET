@@ -26,6 +26,14 @@
 </head>
 <body>
 <nav class="">
+    <style>
+        #banner {
+            width: 100%;
+            height: 200px;
+            z-index: -1;
+        }
+    </style>
+    <img id="banner" src="https://th.bing.com/th/id/OIP.LPYUEbcq5GzPPU7IogbGTgHaEK?w=312&h=180&c=7&r=0&o=5&pid=1.7" alt="Banner Image"/>
     <div class="container">
         <div id="navbar">
             <ul id="navbar">
@@ -33,7 +41,7 @@
                     <a href="{{ path('home') }}">Acceuil</a>
                 </li>
                 <li class="">
-                    <a href="{{ path('register') }}">Produits</a>
+                    <a href="{{ path('list') }}">Produits</a>
                 </li>
                 <li class="">
                     <a href="{{ path('register') }}">Nous contacter</a>
@@ -44,6 +52,7 @@
 
                 <li class="">
                     {% if app.user %}
+                        <a href="{{ path('new') }}">Ajouter un produit</a>
                         <a href="{{ path('logout') }}">Se déconnecter</a>
                     {% else %}
                         <a href="{{ path('login') }}">Se connecter</a>
