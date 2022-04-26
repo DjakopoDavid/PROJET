@@ -21,10 +21,16 @@
         {% for element in dataPanier %}
             <tr>
                 <td>{{ element.article.libelle }}</td>
-                <td>{{ element.article.prix }}</td>
+                <td>{{ element.article.prix }} €</td>
                 <td>{{ element.quantite }}</td>
-                <td>{{ element.quantite * element.article.prix }}</td>
-                <td></td>
+                <td>{{ element.quantite * element.article.prix }} €</td>
+                <td>
+                    <a href="{{ path("add", {"id": element.article.id}) }}"><button>
+                            +
+                        </button>
+                    </a>
+                    
+                </td>
             </tr>
 
         {% else %}
