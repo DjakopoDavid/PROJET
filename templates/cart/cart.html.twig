@@ -9,13 +9,13 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Total</th>
-                <th>Action</th>
-            </tr>
+        <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
         </thead>
         <tbody>
         {% for element in dataPanier %}
@@ -25,22 +25,24 @@
                 <td>{{ element.quantite }}</td>
                 <td>{{ element.quantite * element.article.prix }} €</td>
                 <td>
-                    <a href="{{ path("add", {"id": element.article.id}) }}"><button>
-                            +
-                        </button>
-                    </a>
-                    
+                    <a href="{{ path("add", {"id": element.article.id}) }}"><button> + </button></a>
+                    <a href="{{ path("remove", {"id": element.article.id}) }}"><button> - </button></a>
+                    <a href="{{ path("delete", {"id": element.article.id}) }}"><button>delete</button></a>
                 </td>
             </tr>
-
         {% else %}
             <tr>
                 <td colspan="5" class="text-center">Votre panier est vide</td>
             </tr>
-
         {% endfor %}
-
         </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>{{ total }} €</td>
+            <td> <a href="{{ path("delete")}}"><button>delete all</button></a></td>
+        </tr>
+        </tfoot>
 
     </table>
 

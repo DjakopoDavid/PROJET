@@ -17,7 +17,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="{{ path('show', {"id": article.id}) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Voir</button></a>
-                                        <a href=""><button type="button" class="bi bi-cart-plus">Ajouter au panier</button></a>
+                                        <a href="{{ path("add", {"id": article.id}) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button></a>
                                     </div>
                                 </div>
                             </div>

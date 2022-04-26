@@ -24,27 +24,4 @@ class SecurityController extends AbstractController
         ]);
     }
 
-   #[Route('/addusers', name: 'addusers')]
-
-   public function addUsersAction(ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
-   {
-
-       $em = $doctrine->getManager();
-       $user = new User();
-       $user->setLogin('sadmin')
-           ->setNom('Matthieu')
-           ->setPrenom('Jean')
-           ->setRoles(['ROLE_SUPER_ADMINISTRATEUR']);
-       $hashedPassword = $passwordHasher->hashPassword($user, 'nimdas');
-       $user->setPassword($hashedPassword);
-            #->setDateNaissance('2000-02-14');
-       $em->persist($user);
-       $em->flush();
-       dump($user);
-       return $this->redirectToRoute('register', ['id' => $user->getId()]);
-
-
-
-   }
-
 }
