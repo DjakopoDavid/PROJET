@@ -35,7 +35,6 @@ class RegistrationController extends AbstractController
 
             return $this->redirectToRoute('home');
         }
-        $form->add('submit', SubmitType::class, ['label' => 'S\'inscrire']);
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
